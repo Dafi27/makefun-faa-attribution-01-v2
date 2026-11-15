@@ -1,15 +1,15 @@
 // polymarket-faa-attribution-01 entry (Node 22, standard library only).
 //
-// Persistence forecast with a price-level-aware spread. This is the sibling
-// of the polymarket-faa-attribution-02 entry: the two competitions share the
-// same rules, the same FAA universe and the same practice data (the NVIDIA
-// "Next CEO" event), differing only in dates and escrow, so the same
-// forecast rule is used here, verified again on this kit's own practice
-// cases (see the verification notes at the end of this comment).
+// A persistence forecast with a price-level-aware spread. This is the
+// sibling of the polymarket-faa-attribution-02 entry: the two competitions
+// share the same rules, the same FAA universe and the same practice data
+// (the NVIDIA "Next CEO" event), differing only in dates and escrow, so the
+// same forecast rule is used here, re-verified on this kit's own practice
+// cases (see the verification notes below).
 //
 //   q_tau(h) = clamp(x + z_tau * sigma(x) * sqrt(h), 0, 1), rounded to 6 decimals
 //
-// where x is the market's price at the checkpoint and z_tau the standard
+// where x is the market's price at the checkpoint and z_tau is the standard
 // normal's quantile at each level (-1.644854, -0.674490, 0, 0.674490, 1.644854).
 // The house baseline uses a fixed sigma of 0.0025 for every market.
 //
